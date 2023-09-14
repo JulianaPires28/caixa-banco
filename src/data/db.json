@@ -2,14 +2,10 @@
   "account": [
     {
       "0": {
-        "0": {
-          "name": "Juliana",
-          "saldo": 10070.5,
-          "CPF": "333.333.222-11",
-          "id": 1
-        },
-        "id": 1,
-        "saldo": null
+        "name": "Juliana",
+        "saldo": 10070.5,
+        "CPF": "333.333.222-11",
+        "id": 2
       },
       "id": 1
     }

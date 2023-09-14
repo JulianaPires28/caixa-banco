@@ -16,7 +16,6 @@ const useGetCustomHook = () => {
         return response.json();
       })
       .then((data) => {
-        // console.log(data);
         setData(data);
         console.log(data);
       })

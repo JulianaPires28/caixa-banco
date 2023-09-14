@@ -3,24 +3,12 @@ import TitleTransactions from "../../components/TitleTransactions";
 import "../../styles/transaction.css";
 import "../../styles/commomComponents.css";
 import useGetCustomHook from './../../hooks/useGetCustomHook';
+import { useNavigate } from "react-router-dom";
 
 const Deposito = () => {
   const [value, setValue] = useState(0);
   const { data } = useGetCustomHook();
-  /**TODO
-   * criar um hook custom para fazer get de informações
-   * fazer alteração dos dados
-   * fazer put com novos dados
-   * 
-   * validações:
-   * verificar se valor é nulo
-   * verfificar se valor é negativo
-   * verificar se tem apenas números
-   * 
-   * 
-   * EXTRA: caso seja uma quantia muito grande, verificar se tem certeza
-   * EXTRA: após concluído exibir resumo da tranferencia
-   */
+  const history = useNavigate();
 
   function saveDeposit(){
     
@@ -50,7 +38,7 @@ const Deposito = () => {
         />
 
         <div className="BoxButton">
-          <button className="CancelButton" onClick={() => console.log()}>Voltar</button>
+          <button className="CancelButton" onClick={() => history(-1)}>Voltar</button>
           <button onClick={()=>saveDeposit()}>Confirmar</button>
         </div>
       </div>
