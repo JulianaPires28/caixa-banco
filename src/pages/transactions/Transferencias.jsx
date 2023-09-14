@@ -12,14 +12,14 @@ const Transaction = () => {
 
   function saveTransaction(){
     
-    data[0].saldo += parseFloat(value) 
+    data[0].saldo = data[0].saldo - parseFloat(value)
 
     const options = {
       method: 'PUT',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data)
+      body: JSON.stringify(data[0])
     };
-    
+
     fetch('http://localhost:5000/account/1', options)
       .then(response => response.json())
       .then(data => console.log(data))

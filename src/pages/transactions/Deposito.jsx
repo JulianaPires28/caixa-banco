@@ -17,7 +17,7 @@ const Deposito = () => {
     const options = {
       method: 'PUT',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data)
+      body: JSON.stringify(data[0])
     };
     
     fetch('http://localhost:5000/account/1', options)
