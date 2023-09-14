@@ -1,0 +1,33 @@
+.Transactions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  gap: 110px;
+}
+
+.blocoFormInput{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.BoxButton{
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.TransactionInput{
+  max-width: 90%;
+}
+
+
+
+
