@@ -18,18 +18,36 @@ const Transaction = () => {
 
     if (
       date === data[0].transferencia.ultimaTransferencia &&
-      data[0].transferencia.valorDiario + parseFloat(value) > 8000 &&
+      data[0].transferencia.valorDiario + value > 8000 ||
       data[0].transferencia.valorDiario >= 8000
        ) {
-      alert("Limite diário atingido");
+      alert("Limite diário para transferência atingido");
       return;
+    }
+
+    if (data[0].saldo < value) {
+      alert("Você não pode enviar mais dinheiro do que possui.");
+      return;
+    }
+
+    
+    if (value > 8000) {
+      alert("Valor ultrapassa o limite permitido!");
+      return;
+    }
+
+    if (date !== data[0].transferencia.ultimaTransferencia 
+      && data[0].transferencia.valorDiario > 0) {
+      data[0].transferencia.valorDiario = value;
+    } else {
+      data[0].transferencia.valorDiario = data[0].transferencia.valorDiario + value;
     }
 
     //verificar se o usuário possui saldo igual ao valor digitado 
     //verificar se o saldo que o usuário possui não é negativo.
    
     data[0].transferencia.ultimaTransferencia = date
-    data[0].saldo = data[0].saldo - parseFloat(value)
+    data[0].saldo = data[0].saldo - value
     data[0].transferencia.valorDiario = data[0].transferencia.valorDiario + parseFloat(value);
 
     const options = {
@@ -53,7 +71,7 @@ const Transaction = () => {
           className="TransactionInput"
           type="number"
           placeholder="Informe o valor"
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e) => setValue(parseFloat(e.target.value))}
         />
 
         <div className="BoxButton">

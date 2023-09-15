@@ -14,14 +14,14 @@
           "ultimaTransferencia": "20/05/2023"
         },
         "extrato":[
-            {
-            "tipo":"",
-            "data":"",
-            "operacao":"",
-            "valor":"",
-            "saldo":""
-        }
-          ]
+          {
+          "tipo":"Entrada",
+          "data":"20/05/2023",
+          "operacao":"deposito",
+          "valor":100,
+          "saldo":1000
+      }
+        ]
       }
     ]
   }
