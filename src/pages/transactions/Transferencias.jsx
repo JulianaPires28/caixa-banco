@@ -8,11 +8,29 @@ import { useNavigate } from "react-router-dom";
 const Transaction = () => {
   const [value, setValue] = useState(0);
   const { data } = useGetCustomHook();
-  const history = useNavigate()
+  const history = useNavigate();
+
+  
 
   function saveTransaction(){
-    
+    const date = new Date().toLocaleDateString("pt-BR", {timeZone: "America/Sao_Paulo",
+    });    
+
+    if (
+      date === data[0].transferencia.ultimaTransferencia &&
+      data[0].transferencia.valorDiario + parseFloat(value) > 8000 &&
+      data[0].transferencia.valorDiario >= 8000
+       ) {
+      alert("Limite diário atingido");
+      return;
+    }
+
+    //verificar se o usuário possui saldo igual ao valor digitado 
+    //verificar se o saldo que o usuário possui não é negativo.
+   
+    data[0].transferencia.ultimaTransferencia = date
     data[0].saldo = data[0].saldo - parseFloat(value)
+    data[0].transferencia.valorDiario = data[0].transferencia.valorDiario + parseFloat(value);
 
     const options = {
       method: 'PUT',
@@ -22,9 +40,10 @@ const Transaction = () => {
 
     fetch('http://localhost:5000/account/1', options)
       .then(response => response.json())
-      .then(data => console.log(data))
       .catch(err => console.error(err));
+
   }
+
 
   return (
     <div className="Transactions">

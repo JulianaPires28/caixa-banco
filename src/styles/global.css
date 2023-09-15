@@ -3,14 +3,19 @@ a {
   color: #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
 input {
   display: flex;
   flex-wrap: wrap;
-  width:100%;
+  width: 100%;
   height: 70px;
   padding-left: 20px;
   border-radius: 10px;
@@ -31,13 +36,18 @@ button {
   background: #3b4070;
   min-width: 150px;
   height: 70px;
-  color: rgba(255, 255, 255, 0.53);
+  color: #fff;
   font-size: 22px;
-  margin-left:30px;
+  margin-left: 30px;
+  cursor: pointer;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }

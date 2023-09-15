@@ -11,7 +11,20 @@ const Saque = () => {
   const history = useNavigate();
 
   function saveSaque(){ 
+    const date = new Date().toLocaleDateString("pt-BR", {timeZone: "America/Sao_Paulo",
+  });   
+
+    if(
+      date === data[0].saque.ultimoSaque &&
+      data[0].saque.valorDiario >= 5000 &&
+      data[0].saque.valorDiario  + parseFloat(value) > 5000
+    ){
+      alert("Limite diário para saque atingido")
+      return;
+    }
+    data[0].saque.ultimoSaque = date
     data[0].saldo = data[0].saldo - parseFloat(value)
+    data[0].saque.valorDiario = data[0].saque.valorDiario + parseFloat(value)
     console.log('data',data)
 
     const options = {
@@ -24,7 +37,6 @@ const Saque = () => {
     
     fetch('http://localhost:5000/account/1', options)
       .then(response => response.json())
-      // .then(response => console.log(response))
       .catch(err => console.error(err));
   }
 

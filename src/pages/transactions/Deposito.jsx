@@ -11,7 +11,6 @@ const Deposito = () => {
   const history = useNavigate();
 
   function saveDeposit(){
-    
     data[0].saldo += parseFloat(value) 
 
     const options = {

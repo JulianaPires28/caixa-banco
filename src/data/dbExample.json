@@ -1,0 +1,27 @@
+{
+    "account": [
+      {
+        "name": "Juliana",
+        "saldo": 9000.5,
+        "CPF": "333.333.222-11",
+        "id": 1,
+        "saque": {
+          "valorDiario": 0,
+          "ultimoSaque": "20/05/2023"
+        },
+        "transferencia": {
+          "valorDiario": 0,
+          "ultimaTransferencia": "20/05/2023"
+        },
+        "extrato":[
+            {
+            "tipo":"",
+            "data":"",
+            "operacao":"",
+            "valor":"",
+            "saldo":""
+        }
+          ]
+      }
+    ]
+  }
