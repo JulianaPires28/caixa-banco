@@ -9,9 +9,28 @@ const Deposito = () => {
   const [value, setValue] = useState(0);
   const { data } = useGetCustomHook();
   const history = useNavigate();
+  const date = new Date().toLocaleDateString("pt-BR", {
+    timeZone: "America/Sao_Paulo",
+  });
+
+  
+  function saveHistoryDeposit(account) {
+    const extractBody = {
+      tipo: "Entrada",
+      data: date,
+      operacao: "Depósito",
+      valor: value,
+      saldo: data[0].saldo,
+    };
+
+    account.extrato.push(extractBody);
+    return account;
+  }
 
   function saveDeposit(){
     data[0].saldo += parseFloat(value) 
+
+    saveHistoryDeposit(data[0])
 
     const options = {
       method: 'PUT',
@@ -21,7 +40,6 @@ const Deposito = () => {
     
     fetch('http://localhost:5000/account/1', options)
       .then(response => response.json())
-      .then(response => console.log(response))
       .catch(err => console.error(err));
   }
 

@@ -2,25 +2,35 @@ import { useState } from "react";
 import TitleTransactions from "../../components/TitleTransactions";
 import "../../styles/transaction.css";
 import "../../styles/commomComponents.css";
-import useGetCustomHook from './../../hooks/useGetCustomHook';
+import useGetCustomHook from "./../../hooks/useGetCustomHook";
 import { useNavigate } from "react-router-dom";
 
 const Transaction = () => {
   const [value, setValue] = useState(0);
   const { data } = useGetCustomHook();
   const history = useNavigate();
+  const date = new Date().toLocaleDateString("pt-BR", {
+    timeZone: "America/Sao_Paulo",
+  });
 
-  
+  function saveHistoryTransaction(account) {
+    
+    const extractBody = {
+      tipo: "Saída",
+      data: date,
+      operacao: "Transferência",
+      valor: value,
+      saldo: data[0].saldo,
+    };
+    account.extrato.push(extractBody)
+  }
 
-  function saveTransaction(){
-    const date = new Date().toLocaleDateString("pt-BR", {timeZone: "America/Sao_Paulo",
-    });    
-
+  function saveTransaction() {
     if (
-      date === data[0].transferencia.ultimaTransferencia &&
-      data[0].transferencia.valorDiario + value > 8000 ||
+      (date === data[0].transferencia.ultimaTransferencia &&
+        data[0].transferencia.valorDiario + value > 8000) ||
       data[0].transferencia.valorDiario >= 8000
-       ) {
+    ) {
       alert("Limite diário para transferência atingido");
       return;
     }
@@ -30,42 +40,50 @@ const Transaction = () => {
       return;
     }
 
-    
     if (value > 8000) {
       alert("Valor ultrapassa o limite permitido!");
       return;
     }
 
-    if (date !== data[0].transferencia.ultimaTransferencia 
-      && data[0].transferencia.valorDiario > 0) {
+    if (
+      date !== data[0].transferencia.ultimaTransferencia &&
+      data[0].transferencia.valorDiario > 0
+    ) {
       data[0].transferencia.valorDiario = value;
     } else {
-      data[0].transferencia.valorDiario = data[0].transferencia.valorDiario + value;
+      data[0].transferencia.valorDiario =
+        data[0].transferencia.valorDiario + value;
     }
 
-    //verificar se o usuário possui saldo igual ao valor digitado 
+    //verificar se o usuário possui saldo igual ao valor digitado
     //verificar se o saldo que o usuário possui não é negativo.
-   
-    data[0].transferencia.ultimaTransferencia = date
-    data[0].saldo = data[0].saldo - value
-    data[0].transferencia.valorDiario = data[0].transferencia.valorDiario + parseFloat(value);
+
+    data[0].transferencia.ultimaTransferencia = date;
+    data[0].saldo = data[0].saldo - value;
+    data[0].transferencia.valorDiario =
+    data[0].transferencia.valorDiario + parseFloat(value);
+
+    saveHistoryTransaction(data[0])
 
     const options = {
-      method: 'PUT',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data[0])
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data[0]),
     };
 
-    fetch('http://localhost:5000/account/1', options)
-      .then(response => response.json())
-      .catch(err => console.error(err));
+    fetch("http://localhost:5000/account/1", options)
+      .then((response) => response.json())
+      .catch((err) => console.error(err));
 
+      history(-1)
   }
-
 
   return (
     <div className="Transactions">
-      <TitleTransactions title={"Página de Movimentação"} type={"Transferência"} />
+      <TitleTransactions
+        title={"Página de Movimentação"}
+        type={"Transferência"}
+      />
       <div className="blocoFormInput">
         <input
           className="TransactionInput"
@@ -75,8 +93,10 @@ const Transaction = () => {
         />
 
         <div className="BoxButton">
-          <button className="CancelButton" onClick={() => history(-1)}>Voltar</button>
-          <button onClick={()=>saveTransaction()}>Confirmar</button>
+          <button className="CancelButton" onClick={() => history(-1)}>
+            Voltar
+          </button>
+          <button onClick={() => saveTransaction()}>Confirmar</button>
         </div>
       </div>
     </div>

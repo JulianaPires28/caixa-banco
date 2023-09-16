@@ -13,24 +13,20 @@ const Saque = () => {
     timeZone: "America/Sao_Paulo",
   });
 
+  function saveHistory(account) {
+    const extractBody = {
+      tipo: "Saída",
+      data: date,
+      operacao: "Saque",
+      valor: value,
+      saldo: data[0].saldo,
+    };
 
-  // function saveHistory(account) {
-
-  //   const extractBody = {
-  //           "tipo":"Saída",
-  //           "data":date,
-  //           "operacao":"Saque",
-  //           "valor":value,
-  //           "saldo": data[0].saldo
-  //       }
-
-
-    
-  // }
+    account.extrato.push(extractBody);
+    return account;
+  }
 
   function saveSaque() {
-    
-
     if (
       date === data[0].saque.ultimoSaque &&
       (data[0].saque.valorDiario >= 5000 ||
@@ -59,7 +55,8 @@ const Saque = () => {
     data[0].saque.ultimoSaque = date;
     data[0].saldo = data[0].saldo - value;
 
-    console.log("data", data);
+
+    saveHistory(data[0]);
 
     const options = {
       method: "PUT",

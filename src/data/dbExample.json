@@ -1,27 +1,27 @@
 {
-    "account": [
-      {
-        "name": "Juliana",
-        "saldo": 9000.5,
-        "CPF": "333.333.222-11",
-        "id": 1,
-        "saque": {
-          "valorDiario": 0,
-          "ultimoSaque": "20/05/2023"
-        },
-        "transferencia": {
-          "valorDiario": 0,
-          "ultimaTransferencia": "20/05/2023"
-        },
-        "extrato":[
-          {
-          "tipo":"Entrada",
-          "data":"20/05/2023",
-          "operacao":"deposito",
-          "valor":100,
-          "saldo":1000
-      }
-        ]
-      }
-    ]
-  }
+  "account": [
+    {
+      "name": "Liana",
+      "saldo": 30000,
+      "CPF": "333.333.222-11",
+      "saque": {
+        "valorDiario": 5000,
+        "ultimoSaque": "14/09/2023"
+      },
+      "transferencia": {
+        "valorDiario": 8000,
+        "ultimaTransferencia": "10/09/2023"
+      },
+      "extrato": [
+        {
+          "tipo": "Entrada",
+          "data": "20/05/2023",
+          "operacao": "deposito",
+          "valor": 100,
+          "saldo": 1000
+        }
+      ],
+      "id": 1
+    }
+  ]
+}
