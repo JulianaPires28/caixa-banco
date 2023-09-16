@@ -14,7 +14,6 @@ const Transaction = () => {
   });
 
   function saveHistoryTransaction(account) {
-    
     const extractBody = {
       tipo: "Saída",
       data: date,
@@ -22,7 +21,7 @@ const Transaction = () => {
       valor: value,
       saldo: data[0].saldo,
     };
-    account.extrato.push(extractBody)
+    account.extrato.push(extractBody);
   }
 
   function saveTransaction() {
@@ -43,6 +42,9 @@ const Transaction = () => {
     if (value > 8000) {
       alert("Valor ultrapassa o limite permitido!");
       return;
+    } else if (value === 0) {
+      alert("O valor para depósito precisa ser diferente de 0");
+      return;
     }
 
     if (
@@ -58,9 +60,9 @@ const Transaction = () => {
     data[0].transferencia.ultimaTransferencia = date;
     data[0].saldo = data[0].saldo - value;
     data[0].transferencia.valorDiario =
-    data[0].transferencia.valorDiario + parseFloat(value);
+      data[0].transferencia.valorDiario + parseFloat(value);
 
-    saveHistoryTransaction(data[0])
+    saveHistoryTransaction(data[0]);
 
     const options = {
       method: "PUT",
@@ -72,7 +74,7 @@ const Transaction = () => {
       .then((response) => response.json())
       .catch((err) => console.error(err));
 
-      history(-1)
+    history(-1);
   }
 
   return (

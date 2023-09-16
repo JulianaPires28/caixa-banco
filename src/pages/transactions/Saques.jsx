@@ -40,6 +40,10 @@ const Saque = () => {
       alert("Valor ultrapassa o limite permitido!");
       return;
     }
+    else if (value === 0) {
+      alert("O valor para depósito precisa ser diferente de 0");
+      return 
+    }
 
     if (data[0].saldo < value) {
       alert("Você não pode enviar mais dinheiro do que possui.");
