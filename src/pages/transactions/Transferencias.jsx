@@ -43,7 +43,7 @@ const Transaction = () => {
       alert("Valor ultrapassa o limite permitido!");
       return;
     } else if (value === 0) {
-      alert("O valor para depósito precisa ser diferente de 0");
+      alert("O valor para transferência precisa ser diferente de 0");
       return;
     }
 

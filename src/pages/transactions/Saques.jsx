@@ -41,7 +41,7 @@ const Saque = () => {
       return;
     }
     else if (value === 0) {
-      alert("O valor para depósito precisa ser diferente de 0");
+      alert("O valor para saque precisa ser diferente de 0");
       return 
     }
 
