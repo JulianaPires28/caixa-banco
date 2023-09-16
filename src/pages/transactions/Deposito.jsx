@@ -67,7 +67,6 @@ const Deposito = () => {
             Voltar
           </button>
           <button onClick={() => saveDeposit()}>Confirmar</button>
-          {/* <Modal warning={`Valor do depósito de ${value}`} /> */}
         </div>
       </div>
     </div>
