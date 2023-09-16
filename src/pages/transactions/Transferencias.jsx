@@ -55,9 +55,6 @@ const Transaction = () => {
         data[0].transferencia.valorDiario + value;
     }
 
-    //verificar se o usuário possui saldo igual ao valor digitado
-    //verificar se o saldo que o usuário possui não é negativo.
-
     data[0].transferencia.ultimaTransferencia = date;
     data[0].saldo = data[0].saldo - value;
     data[0].transferencia.valorDiario =

@@ -2,14 +2,14 @@
   "account": [
     {
       "name": "Liana",
-      "saldo": 29990,
+      "saldo": 30050,
       "CPF": "333.333.222-11",
       "saque": {
-        "valorDiario": 10,
+        "valorDiario": 20,
         "ultimoSaque": "15/09/2023"
       },
       "transferencia": {
-        "valorDiario": 0,
+        "valorDiario": 40,
         "ultimaTransferencia": "15/09/2023"
       },
       "extrato": [
@@ -18,21 +18,98 @@
           "data": "20/05/2023",
           "operacao": "deposito",
           "valor": 100,
-          "saldo": 1000
+          "saldo": 30000
+        },
+        {
+          "tipo": "Entrada",
+          "data": "15/09/2023",
+          "operacao": "Depósito",
+          "valor": "10",
+          "saldo": 30010
+        },
+        {
+          "tipo": "Entrada",
+          "data": "15/09/2023",
+          "operacao": "Depósito",
+          "valor": "10",
+          "saldo": 30020
+        },
+        {
+          "tipo": "Entrada",
+          "data": "15/09/2023",
+          "operacao": "Depósito",
+          "valor": "10",
+          "saldo": 30030
+        },
+        {
+          "tipo": "Entrada",
+          "data": "15/09/2023",
+          "operacao": "Depósito",
+          "valor": "10",
+          "saldo": 30040
+        },
+        {
+          "tipo": "Entrada",
+          "data": "15/09/2023",
+          "operacao": "Depósito",
+          "valor": "10",
+          "saldo": 30050
+        },
+        {
+          "tipo": "Entrada",
+          "data": "15/09/2023",
+          "operacao": "Depósito",
+          "valor": "10",
+          "saldo": 30060
+        },
+        {
+          "tipo": "Entrada",
+          "data": "15/09/2023",
+          "operacao": "Depósito",
+          "valor": "10",
+          "saldo": 30070
+        },
+        {
+          "tipo": "Entrada",
+          "data": "15/09/2023",
+          "operacao": "Depósito",
+          "valor": "10",
+          "saldo": 30080
         },
         {
           "tipo": "Saída",
           "data": "15/09/2023",
           "operacao": "Transferência",
-          "valor": 0,
-          "saldo": 30000
+          "valor": 10,
+          "saldo": 30070
+        },
+        {
+          "tipo": "Entrada",
+          "data": "15/09/2023",
+          "operacao": "Depósito",
+          "valor": "10",
+          "saldo": 30080
         },
         {
           "tipo": "Saída",
           "data": "15/09/2023",
           "operacao": "Saque",
           "valor": 10,
-          "saldo": 29990
+          "saldo": 30070
+        },
+        {
+          "tipo": "Saída",
+          "data": "15/09/2023",
+          "operacao": "Saque",
+          "valor": 10,
+          "saldo": 30060
+        },
+        {
+          "tipo": "Saída",
+          "data": "15/09/2023",
+          "operacao": "Transferência",
+          "valor": 10,
+          "saldo": 30050
         }
       ],
       "id": 1
