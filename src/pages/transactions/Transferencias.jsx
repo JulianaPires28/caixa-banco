@@ -59,8 +59,8 @@ const Transaction = () => {
 
     data[0].transferencia.ultimaTransferencia = date;
     data[0].saldo = data[0].saldo - value;
-    data[0].transferencia.valorDiario =
-      data[0].transferencia.valorDiario + parseFloat(value);
+    // data[0].transferencia.valorDiario =
+    //   data[0].transferencia.valorDiario + parseFloat(value);
 
     saveHistoryTransaction(data[0]);
 
