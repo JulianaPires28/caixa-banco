@@ -42,8 +42,8 @@ const Transaction = () => {
     if (value > 8000) {
       alert("Valor ultrapassa o limite permitido!");
       return;
-    } else if (value === 0) {
-      alert("O valor para transferência precisa ser diferente de 0");
+    } else if (value <= 0) {
+      alert("O valor para transferência precisa ser maior 0");
       return;
     }
 

@@ -40,8 +40,8 @@ const Saque = () => {
       alert("Valor ultrapassa o limite permitido!");
       return;
     }
-    else if (value === 0) {
-      alert("O valor para saque precisa ser diferente de 0");
+    else if (value  <= 0) {
+      alert("O valor para saque precisa ser maior que 0");
       return 
     }
 

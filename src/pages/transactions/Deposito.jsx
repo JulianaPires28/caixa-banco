@@ -28,8 +28,8 @@ const Deposito = () => {
   }
 
   function saveDeposit() {
-    if (value === 0) {
-      alert("O valor para depósito precisa ser diferente de 0");
+    if (value <= 0) {
+      alert("O valor para depósito precisa ser maior que 0");
       return;
     }
 
