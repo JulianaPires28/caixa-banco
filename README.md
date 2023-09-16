@@ -1,5 +1,20 @@
 ## Caixa de Banco
 
+## Inicializar o projeto
+`npm i`
+- Instala as dependências do projeto.
+
+`npm install -g json-server`
+- Instala o json-server.
+  
+ `npm start` 
+- Comando para iniciar o projeto local.
+
+Inicia um servidor local na porta:3000 - Acesse http://localhost:3000/ no seu navegador.
+
+`npm run backend`
+- Executa o backend desenvolvido utilizando o Json Server.
+
 ## Telas do sistema
 
 
@@ -49,14 +64,7 @@ Para simulação dos valores, e para que fosse possíveis realizar os metódos d
  - node: v18.14.2
  - json-server : v0.17.3
  
-## Inicializar o projeto
- `npm start` 
-- Comando para iniciar o projeto local.
 
-Inicia um servidor local na porta:3000 - Acesse http://localhost:3000/ no seu navegador.
-
-`npm run backend`
-- Executa o backend desenvolvido utilizando o Json Server.
 
 Inicia um servidor local na porta:5000
 
