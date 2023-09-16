@@ -30,6 +30,7 @@ const Deposito = () => {
   function saveDeposit() {
     if (value === 0) {
       alert("O valor para depósito precisa ser diferente de 0");
+      return;
     }
 
     data[0].saldo += value;
@@ -46,6 +47,7 @@ const Deposito = () => {
       .then((response) => response.json())
       .catch((err) => console.error(err));
 
+      history(-1);
 
   }
 

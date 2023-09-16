@@ -2,15 +2,15 @@
   "account": [
     {
       "name": "Liana",
-      "saldo": 29990,
+      "saldo": 30000,
       "CPF": "333.333.222-11",
       "saque": {
-        "valorDiario": 10,
-        "ultimoSaque": "16/09/2023"
+        "valorDiario": 5000,
+        "ultimoSaque": "14/09/2023"
       },
       "transferencia": {
-        "valorDiario": 0,
-        "ultimaTransferencia": "16/09/2023"
+        "valorDiario": 1000,
+        "ultimaTransferencia": "10/09/2023"
       },
       "extrato": [
         {
@@ -19,20 +19,6 @@
           "operacao": "deposito",
           "valor": 100,
           "saldo": 30000
-        },
-        {
-          "tipo": "Saída",
-          "data": "16/09/2023",
-          "operacao": "Transferência",
-          "valor": 0,
-          "saldo": 30000
-        },
-        {
-          "tipo": "Saída",
-          "data": "16/09/2023",
-          "operacao": "Saque",
-          "valor": 10,
-          "saldo": 29990
         }
       ],
       "id": 1

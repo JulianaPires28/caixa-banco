@@ -71,6 +71,8 @@ const Saque = () => {
     fetch("http://localhost:5000/account/1", options)
       .then((response) => response.json())
       .catch((err) => console.error(err));
+
+      history(-1);
   }
 
   return (
