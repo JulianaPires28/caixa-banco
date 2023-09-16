@@ -57,7 +57,7 @@ Depósito:
 ## Tecnologias utilizadas
 Para desenvolver o projeto, foi utilizado a linguagem JavaScript, com o framework React Js.
 
-Para simulação dos valores, e para que fosse possíveis realizar os metódos de put e get, foi utilizado o Json Server.
+Para simulação dos valores, foi utilizado o Json Server.
 
 ## Dependências 
  Dependências necessárias para iniciar o projeto:
